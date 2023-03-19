@@ -1,0 +1,82 @@
+[
+  {
+    "inputs": [{ "internalType": "address[]", "name": "_stakingContracts", "type": "address[]" }],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" },
+      { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "stakingContract", "type": "address" }],
+    "name": "addStakingContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "user", "type": "address" }],
+    "name": "getBalance",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "stakingAddress", "type": "address" },
+          {
+            "components": [
+              { "internalType": "uint256", "name": "pid", "type": "uint256" },
+              { "internalType": "address", "name": "lp", "type": "address" },
+              { "internalType": "address", "name": "token0", "type": "address" },
+              { "internalType": "address", "name": "token1", "type": "address" },
+              { "internalType": "uint256", "name": "total", "type": "uint256" },
+              { "internalType": "uint256", "name": "wallet", "type": "uint256" },
+              { "internalType": "uint256", "name": "staked", "type": "uint256" }
+            ],
+            "internalType": "struct LPBalanceChecker.Balance[]",
+            "name": "balances",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct LPBalanceChecker.Balances[]",
+        "name": "pBalances",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "index", "type": "uint256" }],
+    "name": "removeStakingContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  { "inputs": [], "name": "renounceOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "stakingContracts",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
